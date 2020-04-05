@@ -18,7 +18,10 @@ const weather = (latitude, logitude, callback) => {
             callback(undefined, {
 
                 temperature: body.currently.temperature,
-                summary: body.currently.summary
+                summary: body.currently.summary,
+                temperatureMin: body.daily.data[7].temperatureMin,
+                temperatureHigh: body.daily.data[7].temperatureHigh
+            
                
             })
         }

@@ -68,7 +68,7 @@ app.get('/weather', (req, res) => {
             })
         }
 
-        const temperatur = forecast(latitude, longitude, (error, {temperature, summary}) => {
+        const temperatur = forecast(latitude, longitude, (error, {temperature, summary, temperatureMin}) => {
 
             if(error){
                 return res.send({
@@ -83,7 +83,8 @@ app.get('/weather', (req, res) => {
 
                 temperature,
                 summary,
-                address: req.query.address
+                address: req.query.address,
+                temperatureMin
 
             })
 
