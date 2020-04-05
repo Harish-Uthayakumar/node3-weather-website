@@ -10,7 +10,7 @@ const forecast = require('./utils/temperature')
 console.log(__dirname)
 console.log(path.join(__dirname,'../public'))
 
-
+const port  = process.env.PORT || 3000
 
 
 //setup views
@@ -153,7 +153,7 @@ app.get('*',(req, res) => {
     })
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
 
     console.log('The app is listening at port 3000')
 })
